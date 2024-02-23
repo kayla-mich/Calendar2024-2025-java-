@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homescreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title "
+        style="@android:style/Widget.DeviceDefault.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lamar High School Calendar "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042"
+        android:textColor="#3F51B5"
+        android:textColorHighlight="#3F51B5"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/Year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2024-2025"
+        android:textColor="#7280CA"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="69dp"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:fontFamily="sans-serif-smallcaps"
+        android:lineSpacingExtra="70sp"
+        android:text="Start"
+        android:textAlignment="viewEnd"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="538dp" />
+
+    <ImageView
+        android:id="@+id/calendarWidget"
+        android:layout_width="162dp"
+        android:layout_height="165dp"
+        app:srcCompat="@drawable/calendar"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
