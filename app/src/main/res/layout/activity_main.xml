@@ -13,7 +13,7 @@
         style="@android:style/Widget.DeviceDefault.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lamar High School Calendar "
+        android:text="Lamar High School Calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +34,11 @@
         android:textColor="#7280CA"
         android:textSize="50sp"
         android:textStyle="bold"
+        android:visibility="visible"
+        tools:visibility="visible"
         tools:layout_editor_absoluteX="66dp"
         tools:layout_editor_absoluteY="69dp"
-        android:visibility="visible"
-        tools:visibility="visible"/>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
@@ -50,7 +51,8 @@
         android:textAlignment="viewEnd"
         android:textSize="40sp"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="538dp" />
+        tools:layout_editor_absoluteY="538dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -58,6 +60,7 @@
         android:layout_height="198dp"
         app:srcCompat="@drawable/newcalendar_foreground"
         tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="199dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
