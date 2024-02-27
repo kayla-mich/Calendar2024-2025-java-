@@ -50,9 +50,9 @@
         android:text="Start"
         android:textAlignment="viewEnd"
         android:textSize="40sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="538dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="489dp" />
 
     <ImageView
         android:id="@+id/imageView2"

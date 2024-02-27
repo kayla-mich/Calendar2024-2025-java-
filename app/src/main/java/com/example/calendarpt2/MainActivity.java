@@ -10,19 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button continueB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button continueB = findViewById(R.id.firstbutton);
+        continueB = (Button) findViewById(R.id.firstbutton);
         continueB.setOnClickListener(new OnClickListener() {
             @Override
             //when you click the button it switches to the second screen
             public void onClick(View view) {
                 Intent intent= new Intent(MainActivity.this, SecondScreen.class);
-
+                System.out.println("Switches screen");
                 startActivity(intent);
             }
 
