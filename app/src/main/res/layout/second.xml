@@ -5,6 +5,15 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="ContentDescription" />
+
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="wrap_content"
@@ -13,15 +22,6 @@
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="122dp" />
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter "
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="502dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -38,16 +38,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="AutoCompleteTextView" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter "
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="222dp"
+            tools:layout_editor_absoluteY="502dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <AutoCompleteTextView
-        android:id="@+id/auto_complete_txt"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:inputType="none"
-        tools:ignore="LabelFor,MissingConstraints" />
 </com.google.android.material.textfield.TextInputLayout>
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
