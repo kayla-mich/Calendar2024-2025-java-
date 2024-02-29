@@ -2,5 +2,6 @@
     <string name="app_name">Calendar pt.2</string>
     <string name="Select">Select Item</string>
     <string name="Choose">Dropmenu Menu</string>
+    <string name="select">Select</string>
 
 </resources>
