@@ -1,12 +1,14 @@
 package com.example.calendarpt2;
 
+import static android.util.Log.d;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -35,8 +37,8 @@ public class SecondScreen extends AppCompatActivity{
                         startActivity(intent);
             }
         });
-        autoCompleteTextView=findViewById(R.id.autoCompleteTextView4);
-        adapterItems= new ArrayAdapter<String>(this, R.layout.list,item);
+        autoCompleteTextView=findViewById(R.id.dropdown);
+        adapterItems= new ArrayAdapter<String>(this, R.layout.second,item);
 
         autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -44,10 +46,23 @@ public class SecondScreen extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapterItems.getItem(position);
                 //String item = AdapterView.getItemAtPosition(position).toString();
-                Toast.makeText(SecondScreen.this, "Item " + Arrays.toString(item), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SecondScreen.this, "Item " + Arrays.toString(item), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SecondScreen.this, "Item " + selectedItem, Toast.LENGTH_SHORT).show();
+
             }
 
         });
+
+        /*autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = adapterItems.getItem(position);
+                // Log the selected item
+                Log.d("ItemClicked", "Selected Item: " + selectedItem);
+                // Toast to display the selected item
+                Toast.makeText(SecondScreen.this, "Item: " + selectedItem, Toast.LENGTH_SHORT).show();
+            }
+        });*/
 
     }
 }
