@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
             //when you click the button it switches to the second screen
             public void onClick(View view) {
                 Intent intent= new Intent(MainActivity.this, SecondScreen.class);
-                System.out.println("Switches screen");
                 startActivity(intent);
             }
 
