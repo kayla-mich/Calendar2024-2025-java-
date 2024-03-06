@@ -9,19 +9,24 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CalendarView;
 import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 public class SecondScreen extends AppCompatActivity{
 
     String[] item={"August 2024", "September 2024", "October 2024", "November 2024", "December 2024", "January 2025", "February 2025", "March 2025", "April 2025", "May 2025", "June 2025", "July 2025"};
     private FloatingActionButton returnButton;
+    CalendarView calenview;
+    Calendar calendar;
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
     @Override
@@ -30,6 +35,10 @@ public class SecondScreen extends AppCompatActivity{
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.second);
         FloatingActionButton returnButton = (FloatingActionButton) findViewById(R.id.backbutton);
+        calenview = findViewById(R.id.calendarView);
+        calendar = Calendar.getInstance();
+
+
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +61,16 @@ public class SecondScreen extends AppCompatActivity{
             }
 
         });
+        setDate( 1,  8,  2024);
+
+         calenview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(SecondScreen.this, dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         /*autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,5 +83,13 @@ public class SecondScreen extends AppCompatActivity{
             }
         });*/
 
+    }
+
+    public void setDate(int dayOfMonth, int month, int year){
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month-1);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        long milli=calendar.getTimeInMillis();
+        calenview.setDate(milli);
     }
 }
