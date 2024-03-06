@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CalendarView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -18,8 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class SecondScreen extends AppCompatActivity{
 
@@ -27,6 +30,7 @@ public class SecondScreen extends AppCompatActivity{
     private FloatingActionButton returnButton;
     CalendarView calenview;
     Calendar calendar;
+    TextView textView;
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
     @Override
@@ -37,6 +41,7 @@ public class SecondScreen extends AppCompatActivity{
         FloatingActionButton returnButton = (FloatingActionButton) findViewById(R.id.backbutton);
         calenview = findViewById(R.id.calendarView);
         calendar = Calendar.getInstance();
+         textView = findViewById(R.id.textview1);
 
 
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +66,25 @@ public class SecondScreen extends AppCompatActivity{
             }
 
         });
-        setDate( 1,  8,  2024);
+        //Set the circle on the date you want see first
+        setDate( 12,  8,  2024);
+        getDate();
+
+
+
 
          calenview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Toast.makeText(SecondScreen.this, dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SecondScreen.this, dayOfMonth + "/" + (month+ 1) + "/" + year, Toast.LENGTH_SHORT).show();
             }
         });
 
 
+
+        if(calenview.getDate()== 2/9/2024 ){
+            textView.setText("It's Labor Day!");
+        }
 
         /*autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,4 +106,17 @@ public class SecondScreen extends AppCompatActivity{
         long milli=calendar.getTimeInMillis();
         calenview.setDate(milli);
     }
+
+    public void getDate(){
+        long date= calenview.getDate();
+        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        calendar.setTimeInMillis(date);
+        String selected_date= simpleDateFormat.format(calendar.getTime());
+        Toast.makeText(this, selected_date, Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
+
 }
