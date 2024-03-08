@@ -2,6 +2,7 @@ package com.example.calendarpt2;
 
 import static android.util.Log.d;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,11 +30,15 @@ public class SecondScreen extends AppCompatActivity{
 
     String[] item={"August 2024", "September 2024", "October 2024", "November 2024", "December 2024", "January 2025", "February 2025", "March 2025", "April 2025", "May 2025", "June 2025", "July 2025"};
     private FloatingActionButton returnButton;
+    private Button enterButton;
     CalendarView calenview;
     Calendar calendar;
     TextView textView;
+    TextView MonthInfo;
     AutoCompleteTextView autoCompleteTextView;
+
     ArrayAdapter<String> adapterItems;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +48,8 @@ public class SecondScreen extends AppCompatActivity{
         calenview = findViewById(R.id.calendarView);
         calendar = Calendar.getInstance();
          textView = findViewById(R.id.textview1);
-
-
+        MonthInfo=findViewById(R.id.monthInfo);
+        enterButton= findViewById(R.id.EnterBTN);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,15 +82,34 @@ public class SecondScreen extends AppCompatActivity{
          calenview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Toast.makeText(SecondScreen.this, dayOfMonth + "/" + (month+ 1) + "/" + year, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SecondScreen.this,   (month+ 1) + "/" + dayOfMonth + "/"+ year, Toast.LENGTH_SHORT).show();
             }
         });
 
+     enterButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Calendar laborDay = Calendar.getInstance();
+             laborDay.set(2024, 9, 12);
+            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) &&
+                    calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
+
+                MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
+                System.out.println(calenview.getDate());
+
+                ;
+            }
+            if (calenview.getDate() == (8/12/2024)) {
+                System.out.println(calenview.getDate());
+
+                ;
+            }
 
 
-        if(calenview.getDate()== 2/9/2024 ){
-            textView.setText("It's Labor Day!");
-        }
+
+         }
+    });
+
 
         /*autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -109,7 +134,7 @@ public class SecondScreen extends AppCompatActivity{
 
     public void getDate(){
         long date= calenview.getDate();
-        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
         calendar.setTimeInMillis(date);
         String selected_date= simpleDateFormat.format(calendar.getTime());
         Toast.makeText(this, selected_date, Toast.LENGTH_SHORT).show();

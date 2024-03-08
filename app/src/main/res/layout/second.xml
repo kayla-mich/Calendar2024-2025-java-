@@ -7,8 +7,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="84dp"
+        android:layout_height="74dp"
         android:layout_weight="1"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_revert"
@@ -17,8 +17,8 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="328dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="122dp" />
@@ -42,10 +42,10 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/EnterBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter "
+            android:text="@string/Enter"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="222dp"
             tools:layout_editor_absoluteY="502dp" />
@@ -54,10 +54,23 @@
 
     <TextView
         android:id="@+id/textview1"
-        android:layout_width="310dp"
-        android:layout_height="164dp"
+        android:layout_width="216dp"
+        android:layout_height="86dp"
         android:layout_weight="1"
-        android:text="Informationa" />
+        android:baselineAligned="false"
+        android:fontFamily="sans-serif"
+        android:text="Information"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/monthInfo"
+        android:layout_width="658dp"
+        android:layout_height="268dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/Month"
+        android:textSize="30sp"
+        android:visibility="visible" />
 
 </com.google.android.material.textfield.TextInputLayout>
 

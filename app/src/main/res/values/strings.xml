@@ -4,5 +4,13 @@
     <string name="Choose">Dropmenu Menu</string>
     <string name="select">Select</string>
     <string name="select_month">Select Month</string>
+    <string name="Enter"> Enter</string>
+    <string name="Month"> Month</string>
+    <string name="Sep"> September 2024:                                                            9/2/24- Labor Day (NO SCHOOL)
+                            9/3/24- Staff PD (NO SCHOOL)
+     </string>
+    <string name="Aug">August 2024:                                                           8/12/2024- First Day of School
+    </string>
+
 
 </resources>
