@@ -28,8 +28,8 @@ import java.util.Locale;
 
 public class SecondScreen extends AppCompatActivity{
 
-    String[] item={"August 2024", "September 2024", "October 2024", "November 2024", "December 2024", "January 2025", "February 2025", "March 2025", "April 2025", "May 2025", "June 2025", "July 2025"};
     private FloatingActionButton returnButton;
+    private FloatingActionButton returnButton2;
     private Button enterButton;
     CalendarView calenview;
     Calendar calendar;
@@ -38,29 +38,26 @@ public class SecondScreen extends AppCompatActivity{
     AutoCompleteTextView autoCompleteTextView;
 
     ArrayAdapter<String> adapterItems;
-    @SuppressLint("MissingInflatedId")
-    @Override
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.second);
-        FloatingActionButton returnButton = (FloatingActionButton) findViewById(R.id.backbutton);
-        calenview = findViewById(R.id.calendarView);
+         calenview = findViewById(R.id.calendarView);
         calendar = Calendar.getInstance();
          textView = findViewById(R.id.textview1);
         MonthInfo=findViewById(R.id.monthInfo);
         enterButton= findViewById(R.id.EnterBTN);
-        returnButton.setOnClickListener(new View.OnClickListener() {
+        returnButton2= (FloatingActionButton) findViewById(R.id.backbutton);
+         returnButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(SecondScreen.this, MainActivity.class);
                         startActivity(intent);
             }
         });
-        autoCompleteTextView=findViewById(R.id.dropdown);
-        adapterItems= new ArrayAdapter<String>(this, R.layout.second,item);
 
-        autoCompleteTextView.setAdapter(adapterItems);
+
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -90,8 +87,8 @@ public class SecondScreen extends AppCompatActivity{
         @Override
         public void onClick(View v) {
             Calendar laborDay = Calendar.getInstance();
-             laborDay.set(2024, 9, 12);
-            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) &&
+             laborDay.set(2024, 9, 3);
+            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) && calendar.get(Calendar.MONTH) == laborDay.get(Calendar.MONTH) &&
                     calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
 
                 MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
@@ -99,11 +96,25 @@ public class SecondScreen extends AppCompatActivity{
 
                 ;
             }
-            if (calenview.getDate() == (8/12/2024)) {
-                System.out.println(calenview.getDate());
+
+            Calendar Sep2Day = Calendar.getInstance();
+            Sep2Day.set(2024, 9, 12);
+            if ((calendar.get(Calendar.MONTH) == Sep2Day.get(Calendar.MONTH) &&
+                    calendar.get(Calendar.DAY_OF_MONTH) == Sep2Day.get(Calendar.DAY_OF_MONTH))) {
+
+                MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
 
                 ;
             }
+            else {
+                if((calendar.get(Calendar.MONTH)!= Sep2Day.get(Calendar.MONTH))){
+                    if ((calendar.get(Calendar.DAY_OF_MONTH)!= Sep2Day.get(Calendar.DAY_OF_MONTH))){
+                        MonthInfo.setText("No events occuring");
+                    }
+                }
+            }
+
+
 
 
 
@@ -111,16 +122,7 @@ public class SecondScreen extends AppCompatActivity{
     });
 
 
-        /*autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = adapterItems.getItem(position);
-                // Log the selected item
-                Log.d("ItemClicked", "Selected Item: " + selectedItem);
-                // Toast to display the selected item
-                Toast.makeText(SecondScreen.this, "Item: " + selectedItem, Toast.LENGTH_SHORT).show();
-            }
-        });*/
+
 
     }
 

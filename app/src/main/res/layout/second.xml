@@ -1,77 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backbutton"
-        android:layout_width="84dp"
-        android:layout_height="74dp"
+        android:layout_width="75dp"
+        android:layout_height="61dp"
         android:layout_weight="1"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="288dp"
-        android:layout_height="328dp"
+        android:layout_width="586dp"
+        android:layout_height="408dp"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="122dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/Select"
-        android:text="@string/Select"
-        tools:ignore="MissingConstraints">
-
-        <AutoCompleteTextView
-            android:id="@+id/dropdown"
-            android:layout_width="253dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/select_month"
-            tools:ignore="LabelFor" />
-
-
-        <Button
-            android:id="@+id/EnterBTN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Enter"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="502dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="134dp" />
 
     <TextView
         android:id="@+id/textview1"
-        android:layout_width="216dp"
-        android:layout_height="86dp"
+        android:layout_width="221dp"
+        android:layout_height="71dp"
         android:layout_weight="1"
         android:baselineAligned="false"
         android:fontFamily="sans-serif"
         android:text="Information"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="617dp"
+        tools:layout_editor_absoluteY="129dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/monthInfo"
-        android:layout_width="658dp"
-        android:layout_height="268dp"
-        android:layout_weight="1"
+        android:layout_width="634dp"
+        android:layout_height="288dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/Month"
+        android:textAlignment="gravity"
         android:textSize="30sp"
-        android:visibility="visible" />
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="617dp"
+        tools:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
 
-</com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/EnterBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Enter"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="624dp"
+        tools:layout_editor_absoluteY="501dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
