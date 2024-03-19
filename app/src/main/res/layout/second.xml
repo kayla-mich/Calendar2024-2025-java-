@@ -6,59 +6,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/backbutton"
-        android:layout_width="75dp"
-        android:layout_height="61dp"
-        android:layout_weight="1"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="586dp"
         android:layout_height="408dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="134dp"
         android:textAlignment="center"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textview1"
         android:layout_width="221dp"
         android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="128dp"
         android:layout_weight="1"
         android:baselineAligned="false"
         android:fontFamily="sans-serif"
         android:text="Information"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="617dp"
-        tools:layout_editor_absoluteY="129dp"
+        app:layout_constraintStart_toEndOf="@+id/calendarView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/monthInfo"
         android:layout_width="634dp"
         android:layout_height="288dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="1dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/Month"
         android:textAlignment="gravity"
         android:textSize="30sp"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="617dp"
-        tools:layout_editor_absoluteY="200dp"
+        app:layout_constraintStart_toEndOf="@+id/calendarView"
+        app:layout_constraintTop_toBottomOf="@+id/textview1"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/EnterBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="12dp"
         android:text="@string/Enter"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="624dp"
-        tools:layout_editor_absoluteY="501dp" />
+        app:layout_constraintStart_toEndOf="@+id/calendarView"
+        app:layout_constraintTop_toBottomOf="@+id/monthInfo"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

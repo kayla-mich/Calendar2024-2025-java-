@@ -57,7 +57,7 @@ public class SecondScreen extends AppCompatActivity{
             }
         });
 
-
+/*
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -69,7 +69,7 @@ public class SecondScreen extends AppCompatActivity{
             }
 
         });
-        //Set the circle on the date you want see first
+  */      //Set the circle on the date you want see first
         setDate( 12,  8,  2024);
         getDate();
 
@@ -87,8 +87,11 @@ public class SecondScreen extends AppCompatActivity{
         @Override
         public void onClick(View v) {
             Calendar laborDay = Calendar.getInstance();
-             laborDay.set(2024, 9, 3);
-            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) && calendar.get(Calendar.MONTH) == laborDay.get(Calendar.MONTH) &&
+           //  laborDay.set(2024, 9, 3);
+
+
+             laborDay.set(2024, 9, 12);
+            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) &&
                     calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
 
                 MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
@@ -96,6 +99,28 @@ public class SecondScreen extends AppCompatActivity{
 
                 ;
             }
+
+         }
+    });
+
+
+/*
+
+
+  laborDay.set(2024, 9, 3);
+            if (( calendar.get(Calendar.MONTH) == laborDay.get(Calendar.MONTH) &&
+                    calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
+
+                MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
+                System.out.println(calenview.getDate());
+
+                ;
+            } else {
+                MonthInfo.setText("No events occuring");
+
+            }
+
+
 
             Calendar Sep2Day = Calendar.getInstance();
             Sep2Day.set(2024, 9, 12);
@@ -112,17 +137,8 @@ public class SecondScreen extends AppCompatActivity{
                         MonthInfo.setText("No events occuring");
                     }
                 }
-            }
-
-
-
-
-
-         }
-    });
-
-
-
+                }
+* */
 
     }
 
