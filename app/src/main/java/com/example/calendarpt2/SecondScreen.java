@@ -83,25 +83,54 @@ public class SecondScreen extends AppCompatActivity{
             }
         });
 
-     enterButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Calendar laborDay = Calendar.getInstance();
-           //  laborDay.set(2024, 9, 3);
+         enterButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Calendar laborDay = Calendar.getInstance();
+                 //  laborDay.set(2024, 9, 3);
 
+                 laborDay.set(Calendar.YEAR, 2024);;
+                 laborDay.set(Calendar.MONTH, 8);
+                 laborDay.set(Calendar.DAY_OF_MONTH, 3);
 
-             laborDay.set(2024, 9, 12);
-            if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) &&
-                    calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
+                 if ((calendar.get(Calendar.YEAR) == laborDay.get(Calendar.YEAR) &&
+                         calendar.get(Calendar.DAY_OF_MONTH) == laborDay.get(Calendar.DAY_OF_MONTH))) {
 
-                MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
-                System.out.println(calenview.getDate());
+                     MonthInfo.setText("September 2024: "+" 9/2/24- Labor Day (NO SCHOOL)" +  "9/3/24- Staff PD (NO SCHOOL)");
+                     System.out.println(calenview.getDate());
 
-                ;
-            }
+                     ;
+                 }
 
-         }
-    });
+                 else
+                 if((calendar.get(Calendar.DAY_OF_MONTH)!= laborDay.get(Calendar.DAY_OF_MONTH))) {
+                     MonthInfo.setText("No events occuring");
+                 }
+             }
+
+         });
+         enterButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Calendar FIRSTday = Calendar.getInstance();
+                 //  laborDay.set(2024, 9, 3);
+
+                 FIRSTday.set(Calendar.DAY_OF_MONTH, 20);;
+                 if ((calendar.get(Calendar.DAY_OF_MONTH) == FIRSTday.get(Calendar.DAY_OF_MONTH))) {
+
+                     MonthInfo.setText(Calendar.getInstance().get(Calendar.MONTH) + "/" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + "/" + Calendar.getInstance().get(Calendar.YEAR));
+                     System.out.println(calenview.getDate());
+
+                     ;
+                 }
+
+                 else
+                 if((calendar.get(Calendar.DAY_OF_MONTH)!= FIRSTday.get(Calendar.DAY_OF_MONTH))) {
+                     MonthInfo.setText("No events occuring");
+                 }
+             }
+         });
+
 
 
 /*
